@@ -1,5 +1,6 @@
 import express from "express";
 import bodyParser from "body-parser";
+import axios from "axios";
 
 const app = express();
 const port = 4000;
@@ -41,11 +42,31 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //Write your code here//
 
 //CHALLENGE 1: GET All posts
-
+app.get("/posts",()=>{
+    console.log(posts)
+    res.json(posts);
+})
 //CHALLENGE 2: GET a specific post by id
+app.get("/posts:id",async(req,res)=>{
+    
+      const id=req.params.id;
+    const result=posts.find((p)=>{p.id===parseInt(id)});
+    res.json(result);
+    
+    if(!result)
+    {
+      return(res.sendStatus.json({message:"Post not available"}))
+    }
+    
 
+})
 //CHALLENGE 3: POST a new post
+app.get("/posts",(req,res)=>{
+  const newID=lastId=+1;
+  const 
 
+
+})
 //CHALLENGE 4: PATCH a post when you just want to update one parameter
 
 //CHALLENGE 5: DELETE a specific post by providing the post id.

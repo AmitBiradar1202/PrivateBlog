@@ -6,6 +6,7 @@ const app = express();
 const port = 3000;
 const API_URL = "http://localhost:4000";
 
+
 app.use(express.static("public"));
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -21,6 +22,10 @@ app.get("/", async (req, res) => {
     res.status(500).json({ message: "Error fetching posts" });
   }
 });
+
+app.get("/login",(req,res)=>{
+  res.render("login.ejs",{ heading:"login"})
+})
 
 // Route to render the edit page
 app.get("/new", (req, res) => {

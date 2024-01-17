@@ -108,8 +108,11 @@ li:last-child {
 }
 
 a.edit {
-  background-color: #007bff;
+  background-color: #00a6ff;
   /* margin-right: 10px; */
+}
+a.edit:hover{
+  background-color: #0056b3;
 }
 
 a.delete {
@@ -119,6 +122,16 @@ a.delete {
 a.delete:hover {
   background-color: #c0392b;
 }
+
+a.comments {
+  margin-left:10px;
+  background-color: rgb(173, 205, 15);
+}
+
+a.comments:hover {
+  background-color: rgba(173, 205, 15, 0.628);
+}
+
 
 #newPostBtn {
   margin: 20px 0;
